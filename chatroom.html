@@ -1,0 +1,44 @@
+<html>
+    <head>  
+        <title>选择房间</title>
+        <meta charset="UTF-8">
+    </head>  
+	<body>
+		
+		<h2>{{user}},您可以加入房间，或者创建房间</h2>
+
+		<div class="app">
+				<div style="float:left;background:rgb(236, 123, 123);height: 600px;width: 400px;">
+		<form name='room' action='/join' method='post'> 
+		<h3>新房间名：</h3>
+		<input type='text' name='roomname' value="room1"/>
+		<input type='submit' value='创建'/>  
+		<input type='hidden' name='user' value={{user}} />
+		<input type='hidden' name='port' value={{port}} />
+    </form>
+		</div>
+
+		<div style="float:left;background:rgb(128, 236, 128);height: 600px;width: 400px;">
+		<form name='room' action='/join' method='post'> 
+		<h3>已有房间名：（如不存在则会自动新建房间）</h3>
+		<br>  
+		{% for i in rooms %}
+			{{i}}<br>
+		{% end %}
+		<input type='text' name='roomname' value="room1"/>
+		<input type='submit' value='加入'/>  
+		<input type='hidden' name='user' value={{user}} />
+		<input type='hidden' name='port' value={{port}} />
+		</form>
+		</div>
+	</div>
+	<br>
+
+	<div style="position:fixed;left:300px;top:700px;">
+		<form name='exit' action='/exit' method='post' > 
+			<input type='hidden' name='user' value={{user}} />
+			<input type='submit' value='退出登录' />  
+		</form>	
+	</div>	
+	</body>
+</html>

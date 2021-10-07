@@ -1,0 +1,26 @@
+<html>
+    <head>  
+        <title>聊天室</title>
+        <meta charset="UTF-8">
+    </head>  
+	<body>
+		<h2>内容</h2>
+		<textarea name="content" rows=15 col=10>
+		
+		</textarea>
+		<br>
+
+		房间内用户：
+		&#13;&#10;
+		
+		<form name='update' action='/update' method='post'> 
+		输入：
+		<input type='text' name='send' value="haha"/>
+		<input type='submit' value='发送'/>  
+    　　</form>
+		&#13;&#10;
+		<form name='update' action='/exit' method='post'> 
+		<input type='submit' value='返回'/>  
+    　　</form>
+	</body>
+</html>
